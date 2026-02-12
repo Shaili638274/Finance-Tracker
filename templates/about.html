@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block main %}
+{% load static %}
+<style>
+    .about {
+        min-height: 50vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 60px 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url("{% static 'images/bg-img.png' %}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        
+    }
+    
+    .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 80px 80px;
+        border-radius: 10px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.8s ease-out;
+        margin-top: 55px;
+
+    }
+    
+    .about-content h1 {
+        color: #667eea;
+        font-size: 2.5em;
+        margin-bottom: 25px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-content p {
+        color: #333;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+    
+    .about-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+    }
+    
+    .about-content li {
+        color: #555;
+        font-size: 1.05em;
+        padding: 12px 0 12px 40px;
+        position: relative;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .about-content li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #764ba2;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    
+    .about-content li:hover {
+        color: #667eea;
+        padding-left: 50px;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .about-content {
+            padding: 30px 20px;
+        }
+        .about-content h1 {
+            font-size: 2em;
+        }
+        .about-content p {
+            font-size: 1em;
+        }
+    }
+    
+   
+    
+        
+    
+</style>
+    <section class="about">
+        <div class="about-content">
+            <h1>About Finance Tracker</h1>
+            <p>Finance Tracker is a comprehensive tool designed to help you manage your personal and business finances with ease. Our mission is to provide users with an intuitive platform that simplifies budgeting, expense tracking, and financial planning.</p>
+            <p>With Finance Tracker, you can:</p>
+            <ul>
+                <li>Track your income and expenses</li>
+                <li>Create and manage budgets</li>
+                <li>Generate financial reports</li>
+                <li>Set financial goals and monitor progress</li>
+            </ul>
+            <p>We are committed to helping you achieve financial stability and success. Thank you for choosing Finance Tracker!</p>
+        </div>
+    </section>
+{% endblock main %}

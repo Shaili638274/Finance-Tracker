@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% load static %}
+<style>
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f9a4;
+        margin: 0;
+        padding: 0;
+        background-image: url("{% static 'images/44.jpg' %}");
+        background-attachment: fixed;
+        background-size: cover;
+       
+        
+    }
+    form {
+        max-width: 500px;
+        margin: 20px 0;
+        padding: 20px;
+        border: 1px solid #dddddda5;
+        border-radius: 8px;
+        background-color: #f9f9f9fc;
+        margin-top: 40px;
+    }
+    
+    form p {
+        margin-bottom: 15px;
+    }
+    
+    form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    form input, form select, form textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    img {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        margin-left: 20px;
+        float: right;
+        margin-top: 150px;
+    }   
+</style>
+
+<h2>Add Transaction</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button> &nbsp;&nbsp;
+    <a href="/">Back to Dashboard</a>
+</form>
+
+
+{% endblock main %}

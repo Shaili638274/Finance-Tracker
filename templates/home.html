@@ -1,0 +1,47 @@
+{%  extends "base.html" %}
+
+{% block main %}
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Finance Tracker</h1>
+            <p>Manage your finances efficiently and effectively</p>
+            <a href="{% url 'register' %}" style="background-color: #ffffff;padding: 8px 15px;border-radius: 5px; text-decoration: none; color: #000;" class="btn">Register Now</a>
+        </div>
+        <br>
+    </section>
+    <section class="more-features">
+  <h1 style="font-size: 40px;;">More Features</h1>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <h3>Expense Analytics</h3>
+      <p>Visualize your spending with smart charts and insights.</p>
+      <button class="green-btn">Coming Soon</button>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">💳</div>
+      <h3>Multiple Accounts</h3>
+      <p>Track bank accounts, cards, and wallets in one place.</p>
+      <button class="green-btn">Coming Soon</button>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">⏰</div>
+      <h3>Bill Reminders</h3>
+      <p>Never miss a payment with timely alerts and reminders.</p>
+      <button class="green-btn">Coming Soon</button>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">🔐</div>
+      <h3>Secure Data</h3>
+      <p>Your financial data is protected with top-level security.</p>
+      <button class="green-btn ">Coming Soon</button>
+    </div>
+  </div>
+  
+</section>
+{% endblock main %}

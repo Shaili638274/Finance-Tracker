@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block main %}
+{% load static %}
+
+<style>/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background */
+.form-style {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background-image: url("{% static 'images/log-img.png' %}");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Login container */
+form {
+    background: #ffffff;
+    width: 390px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+    {% comment %} position: fixed; {% endcomment %}
+    
+
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+}
+
+/* Form fields */
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #667eea;
+}
+
+/* Login button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Error message */
+p[style*="color:red"] {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+/* Register link */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 600;
+}
+
+
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer {
+    position: fixed;
+}
+.navbar {
+            background-color: #F0F0F0;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            height: 75px;
+            top: 0;
+            z-index: 1000;
+            line-height: 33px;
+
+
+        }
+        .nav-container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .nav-menu {
+            list-style: none;
+            display:flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            
+        }
+        .nav-link-btn {
+            background-color: #ff5733;
+            padding: 0px 15px;
+            border-radius: 5px;
+            height: 35px;
+            line-height: 35px;
+        }
+
+</style>
+
+<div class="form-style">
+<form method="post" >
+    <h2>Login</h2>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+    <a href="/register/">Register</a>
+</form>
+</div>
+{% endblock main %}

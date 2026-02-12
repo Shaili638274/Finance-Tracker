@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker - Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #e6e3e3;
+            color: #e3dede;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            height: 75px;
+            top: 0;
+            z-index: 1000;
+            {% comment %} line-height: 50px; {% endcomment %}
+
+        }
+        .nav-container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-menu {
+            list-style: none;
+            display:flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .nav-link-btn {
+            background-color: #ff5733;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .hero {
+            text-align: center;
+            padding: 250px 0px 20px 0px;
+            width: 100%;
+            min-height: 60vh;
+            {% comment %} background-color: #e2e2e2; {% endcomment %}
+            background-image: url("{% static 'images/bg-img.png' %}"); 
+            {% comment %} background-size: cover;   {% endcomment %}
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            animation: fadeUp 1.2s ease-out forwards;
+        }
+        .btn{
+            animation: fadeUp 1.2s ease-out forwards;
+            margin-bottom: 30px;
+        }
+                @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        .hero p {
+            font-size: 20px;
+            color: white;
+            animation: fadeUp 1.2s ease-out forwards;
+        }
+
+
+        .footer {
+            margin-top: 10px;
+            background-color: Black;
+            color: #fff;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        .nav-menu li a {
+            color: #333;
+            font-weight: bold;
+        }
+        .footer {
+    background-color: #1f2933;
+    color: #d1d5db;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.more-features {
+  padding: 60px 20px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.more-features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card .icon {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.green-btn {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(40, 167, 69, 0.35);
+}
+
+.green-btn:hover {
+  background: linear-gradient(135deg, #1e7e34, #28a745);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(40, 167, 69, 0.5);
+}
+
+.green-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(40, 167, 69, 0.4);
+}
+.site-footer {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 50px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-box h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #22c55e;
+}
+
+.footer-box h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #cbd5f5;
+  transition: color 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #22c55e;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><p style="font-size: 24px; font-weight: bold; color: #333;">Finance Tracker</p></div>
+            <ul class="nav-menu">
+            <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+            <li><a href="{% url 'benefits' %}" class="nav-link">Benefits</a></li>
+            <li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+            <li><a href="{% url 'register' %}" class="nav-link nav-link-btn">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block main %}
+    
+    {% endblock main %}
+
+    
+
+
+    {% comment %} <section class="footer">
+        <div class="footer-content" style="text-align: center; color: #fff;">
+            <p>&copy; 2024 FinanceTracker. All rights reserved.</p>
+        </div> 
+
+    </section> {% endcomment %}
+
+    <footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-box">
+      <h3>Finance Tracker</h3>
+      <p>Track expenses, manage budgets, and take control of your finances easily.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'benefits' %}">Benefits</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li>📧 support@financetracker.com</li>
+        <li>📞 +91 98765 43210</li>
+        <li>📍 Meerut, India</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2026 Finance Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

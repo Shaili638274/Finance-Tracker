@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #eafefe;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    line-height: 1.6;
+    background-image: url("{% static 'images/bg-img.png' %}");
+}
+
+h1 {
+    margin-bottom: 50px;
+    margin-top: 55px;
+    color: #fff;
+
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    width: 180px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+</style>
+<br>
+<div class="container">
+    <h1>Benefits of Expense Tracker Software</h1>
+
+    <div class="benefits">
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <p>Improves Allocation of Resources</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💰</div>
+            <p>Cash Flow Management</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚠️</div>
+            <p>Risk Management</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <p>Budgetary Control</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <p>Live Insights & Financial Reporting</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧾</div>
+            <p>Tax Compliance</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <p>Enhance Decision Making</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔗</div>
+            <p>Integration Capabilities</p>
+        </div>
+
+    </div>
+</div>
+{% endblock main %}
